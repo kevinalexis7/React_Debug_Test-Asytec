@@ -26,4 +26,8 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** asignarle un nuevo array vacío `setHistory([])`, para que detecte el cambio.
 - **Resultado:** El componente se re-renderiza con normalidad limpiando el historial del contador.
 
-
+### Error 4 – Mínimo de pasos
+- **Descripción:** El input de pasos(steps) se puede setear con números menores a 1, por lo que el los botones comienzan a sumar/restar cero o números negativos.
+- **Causa:** El input de pasos no tiene un mínimo establecido.
+- **Solución:** Se establece un mínimo en la etiqueta input de que setea los pasos. También se interpreta como 1 cualquier valor menor a 1 en la función `setStep`.
+- **Resultado:** El contador de pasos funciona solo con números mayores a cero y previene un mal uso del mismo.
