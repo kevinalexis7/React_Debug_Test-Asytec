@@ -78,4 +78,9 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Mover la lógica de theme a un custom hook.
 - **Resultado:** El código tanto en el componente `app` como en el hook `useTheme` quedo mucho más limpio, eficiente y escalable.`
 
+### Error 12 – Tabs activas
+- **Descripción:** con una tabla no sabes en cual estas parado.
+- **Causa:** falta los estilos de css para la clase `active`.
+- **Solución:** agregar los estilos pertinentes.
+- **Resultado:** Dependiendo de en que tabla esté parado el usuario, esta tendrá un color diferente, azul más oscuro.
 
