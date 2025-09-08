@@ -99,5 +99,6 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 
 
 ### Nota:
-Arreglé todos los problemas que pude. Intenté no modificar demaciado el proyecto, mi idea es que quedara lo más vanilla posible.
-Muchas gracias por el tiempo, Saludos cordiales.
+-Arreglé todos los problemas que pude. Intenté no modificar demaciado el proyecto, mi idea es que quedara lo más vanilla posible.
+-También intente que el proceso quedara lo mejor plasmado posible con los commits.
+-Muchas gracias por el tiempo, Saludos cordiales.
