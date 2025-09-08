@@ -1,62 +1,62 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0)
-  const [step, setStep] = useState(1)
-  const [history, setHistory] = useState([])
+  const [count, setCount] = useState(0);
+  const [step, setStep] = useState(1);
+  const [history, setHistory] = useState([]);
 
-  useEffect(() => {
-    setHistory(prev => [...prev, count])
-  })
-
-  
-  const increment = () => {
-    setCount(count + step)
-  }
-
-  const decrement = () => {
-    setCount(count - step)
+  function handleCount(op) {
+    let newNum = 0;
+    if(!op) return setCount(newNum)
+    if (op === "+") newNum = count + step;
+    if (op === "-") newNum = count - step;
+    setCount(newNum);
+    setHistory((prev) => [newNum, ...prev]);
   }
 
   const clearHistory = () => {
-    history.length = 0
-    setHistory(history)
-  }
+    setHistory([]);
+  };
 
-  const incrementAsync = async () => {
+  function incrementAsync () {
     setTimeout(() => {
-      setCount(count + 1)
-    }, 1000)
-  }
+      const newNum = count+1
+      setCount(newNum);
+      setHistory((prev) => [newNum, ...prev]);
+    }, 1000);
+  };
 
   return (
     <div className="card">
       <h2>Counter Component</h2>
-      
-      <div style={{ marginBottom: '20px' }}>
+
+      <div style={{ marginBottom: "20px" }}>
         <label>
-          Step: 
-          <input 
-            type="number" 
-            value={step} 
-            onChange={(e) => setStep(e.target.value)}
-            style={{ marginLeft: '10px', width: '60px' }}
+          Step:
+          <input
+            type="number"
+            min={1}
+            value={step}
+            onChange={(e) =>
+              setStep(Number(e.target.value) < 1 ? 1 : Number(e.target.value))
+            }
+            style={{ marginLeft: "10px", width: "60px" }}
           />
         </label>
       </div>
 
-      <div style={{ fontSize: '2em', marginBottom: '20px' }}>
+      <div style={{ fontSize: "2em", marginBottom: "20px" }}>
         Count: {count}
       </div>
 
       <div>
-        <button className="button" onClick={increment}>
+        <button className="button" onClick={() => handleCount("+")}>
           + {step}
         </button>
-        <button className="button" onClick={decrement}>
+        <button className="button" onClick={() => handleCount("-")}>
           - {step}
         </button>
-        <button className="button" onClick={() => setCount(0)}>
+        <button className="button" onClick={() => handleCount()}>
           Reset
         </button>
         <button className="button" onClick={incrementAsync}>
@@ -64,19 +64,26 @@ function Counter() {
         </button>
       </div>
 
-      <div style={{ marginTop: '20px' }}>
+      <div style={{ marginTop: "20px" }}>
         <h3>History ({history.length} items)</h3>
         <button className="button" onClick={clearHistory}>
           Clear History
         </button>
-        <div style={{ maxHeight: '100px', overflow: 'auto', border: '1px solid #ccc', padding: '10px' }}>
+        <div
+          style={{
+            maxHeight: "100px",
+            overflow: "auto",
+            border: "1px solid #ccc",
+            padding: "10px",
+          }}
+        >
           {history.map((value, index) => (
             <div key={index}>{value}</div>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Counter
+export default Counter;
