@@ -7,6 +7,7 @@ function Counter() {
 
   function handleCount(op) {
     let newNum = 0;
+    if(!op) return setCount(newNum)
     if (op === "+") newNum = count + step;
     if (op === "-") newNum = count - step;
     setCount(newNum);
