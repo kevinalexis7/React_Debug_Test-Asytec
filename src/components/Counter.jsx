@@ -17,7 +17,7 @@ function Counter() {
     setHistory([]);
   };
 
-  const incrementAsync = async () => {
+  function incrementAsync () {
     setTimeout(() => {
       const newNum = count+1
       setCount(newNum);

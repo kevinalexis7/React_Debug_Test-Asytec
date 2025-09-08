@@ -43,3 +43,8 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Invertir el orden de aparición de los cambios(que los últimos cambios en el contador se muestren Primeros en la lista).
 - **Resultado:** El usuario ya no debería scrollear para ver los últimos cambios.
 
+### Error 6 – Sintaxis incrementAsync
+- **Descripción:** un error de sintaxis en la función `incrementAsync`.
+- **Causa:** La función en cuestión no es una función asíncrona.
+- **Solución:** Eliminar el async.
+- **Resultado:** Sintaxis más simples y concisa.
