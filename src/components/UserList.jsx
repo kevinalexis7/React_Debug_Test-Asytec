@@ -9,7 +9,7 @@ function UserList() {
 
   useEffect(() => {
     fetchUsers()
-  }, [searchTerm])
+  }, [])
 
   const fetchUsers = async () => {
     setLoading(true)

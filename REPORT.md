@@ -55,4 +55,10 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Se crea un array nuevo con en usuario en cuestión filtrado y se setea con SetUsers.
 - **Resultado:** El usuario se elimina de la lista, React lo detecta y re-renderiza una lista nueva sin el usuario en cuestión.
 
+### Error 9 – Buscador de usuarios
+- **Descripción:** la pagina se actualiza cada vez que detecta un cambio en la barra de busqueda.
+- **Causa:** Un UseEffect que se ejecuta cada vez que cambia el estado `searchTerm`.
+- **Solución:** Hacer que el useCase solo se ejecute cundo se monta el componente, quitando searchTerm del segundo parámetro.
+- **Resultado:** El buscador funciona con normalidad sin recargar la pagina.
+
 
