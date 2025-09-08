@@ -39,7 +39,7 @@ function Counter() {
           <input 
             type="number" 
             value={step} 
-            onChange={(e) => setStep(e.target.value)}
+            onChange={(e) => setStep(Number(e.target.value))}
             style={{ marginLeft: '10px', width: '60px' }}
           />
         </label>
