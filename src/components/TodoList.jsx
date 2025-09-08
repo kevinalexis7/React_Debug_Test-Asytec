@@ -4,7 +4,7 @@ import useLocalStorage from '../hooks/useLocalStorage'
 function TodoList() {
   const [todos, setTodos] = useLocalStorage("todos", [])
   const [newTodo, setNewTodo] = useState('')
-  const [filter, setFilter] = useState('all')
+  const [filter, setFilter] = useLocalStorage('todos_filter', 'all')
   const inputRef = useRef()
 
   useEffect(() => {

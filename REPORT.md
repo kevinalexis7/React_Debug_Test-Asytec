@@ -90,4 +90,9 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Reutilizando el custom hook `useLocalHost` se setea como valor inicial un array vacío hasta que guarde algo dentro del local storage, entonces tomar como valor inicial su contenido.
 - **Resultado:** Ahora la lista de todos se guarda correctamente.
 
+### Error 14 – mantener filtros todos
+- **Descripción:** Los filtros del listado de todos, al recargar la pagina se restablecían.
+- **Causa:** No se guardaba el filtro que el usuario seteaba.
+- **Solución:** Guardar el filtro que el usuario escoja en local storage, para que este se mantenga cuando se recarga la página.
+- **Resultado:** Ahora los filtros de lista de todos se guardan correctamente.
 
