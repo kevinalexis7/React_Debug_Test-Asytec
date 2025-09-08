@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -56,4 +57,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+body.dark {
+  background-color: rgb(43, 43, 43);
+  color: #f0f0f0
+}
+
+.dark .card {
+  background: #2a2a2a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  color: #f0f0f0;
+}
+
+.dark .button:hover {
+  background: #155ebe;  
+}
+
+.dark .error {
+  color: #ff6b6b;       
+}
+
+.dark .loading {
+  color: #e0e0e0;       
+}
+
+.dark .user-list {
+  background-color: #1e1e1e;
+}
+
+.dark .user-item {
+  border-bottom: 1px solid #333;
+  color: #f0f0f0;
 }

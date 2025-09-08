@@ -67,3 +67,15 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Aprovechando el custom hook `useLocalStorage`, guardar la ultima tab que visita el usuario y tomar de ahí el valor inicial de activeTab.
 - **Resultado:** Independientemente de en que tab se encuentre el usuario, al recargar la pagina, seguirá en la misma tab.
 
+### Error 11 – Modo oscuro no funciona
+- **Descripción:** Al interactuar con el botón de modo oscuro(DarkMode) este no surge ningún efecto.
+- **Causa:** falta los estilos de css para la clase `dark`.
+- **Solución:** agregar los estilos pertinentes, a demás se movió la clase dark a la etiqueta body para que abarque todos los elementos html.
+- **Resultado:** El botón funciona correctamente haciendo toggle entre "dark" y "light" mode.
+
+### Refactor - Modo oscuro
+- **Descripción:** La lógica de `theme` está mezclada con la de app, lo que satura al componente.
+- **Solución:** Mover la lógica de theme a un custom hook.
+- **Resultado:** El código tanto en el componente `app` como en el hook `useTheme` quedo mucho más limpio, eficiente y escalable.`
+
+
