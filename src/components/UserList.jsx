@@ -36,10 +36,6 @@ function UserList() {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value)
-
-    setTimeout(() => {
-      console.log('Searching for:', e.target.value)
-    }, 500)
   }
 
   if (loading) {
