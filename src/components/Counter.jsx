@@ -7,7 +7,7 @@ function Counter() {
 
   function handleCount(op) {
     let newNum = 0;
-    if(!op) return setCount(newNum)
+    if (!op) return setCount(newNum);
     if (op === "+") newNum = count + step;
     if (op === "-") newNum = count - step;
     setCount(newNum);
@@ -18,13 +18,13 @@ function Counter() {
     setHistory([]);
   };
 
-  function incrementAsync () {
+  function incrementAsync() {
     setTimeout(() => {
-      const newNum = count+1
+      const newNum = count + 1;
       setCount(newNum);
       setHistory((prev) => [newNum, ...prev]);
     }, 1000);
-  };
+  }
 
   return (
     <div className="card">
@@ -77,9 +77,15 @@ function Counter() {
             padding: "10px",
           }}
         >
-          {history.map((value, index) => (
-            <div key={index}>{value}</div>
-          ))}
+          {history.length > 0 ? (
+            history.map((value, index) => <div key={index}>{value}</div>)
+          ) : (
+            <div
+              style={{ textAlign: "center", color: "#666", padding: "20px" }}
+            >
+              No Items to show
+            </div>
+          )}
         </div>
       </div>
     </div>
