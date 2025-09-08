@@ -5,11 +5,13 @@ import TodoList from './components/TodoList'
 import useLocalStorage from './hooks/useLocalStorage'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('counter')
+  const [oldTab, setOldTab] = useLocalStorage("tab", 'counter')
+  const [activeTab, setActiveTab] = useState(oldTab)
   const [theme, setTheme] = useLocalStorage('theme', 'light')
   
   useEffect(() => {
     document.title = `React Debug Test - ${activeTab}`
+    setOldTab(activeTab)
   })
 
   const handleThemeToggle = () => {

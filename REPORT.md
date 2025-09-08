@@ -61,4 +61,9 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Hacer que el useCase solo se ejecute cundo se monta el componente, quitando searchTerm del segundo parámetro.
 - **Resultado:** El buscador funciona con normalidad sin recargar la pagina.
 
+### Error 10 – No se mantiene la tabla
+- **Descripción:** Al actualizar la pagina siempre vuelve a la tab counter.
+- **Causa:** El estado activeTab tiene seteado por defecto la 'counter', lo que hace que siempre que recargues la página se cargue la tab counter.
+- **Solución:** Aprovechando el custom hook `useLocalStorage`, guardar la ultima tab que visita el usuario y tomar de ahí el valor inicial de activeTab.
+- **Resultado:** Independientemente de en que tab se encuentre el usuario, al recargar la pagina, seguirá en la misma tab.
 
