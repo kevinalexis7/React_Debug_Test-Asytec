@@ -7,7 +7,7 @@ function Counter() {
 
   useEffect(() => {
     setHistory(prev => [...prev, count])
-  })
+  }, [count])
 
   
   const increment = () => {
