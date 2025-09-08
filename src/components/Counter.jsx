@@ -19,8 +19,7 @@ function Counter() {
   }
 
   const clearHistory = () => {
-    history.length = 0
-    setHistory(history)
+    setHistory([])
   }
 
   const incrementAsync = async () => {
