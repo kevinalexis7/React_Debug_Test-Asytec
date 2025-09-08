@@ -96,3 +96,8 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Guardar el filtro que el usuario escoja en local storage, para que este se mantenga cuando se recarga la página.
 - **Resultado:** Ahora los filtros de lista de todos se guardan correctamente.
 
+
+
+### Nota:
+Arreglé todos los problemas que pude. Intenté no modificar demaciado el proyecto, mi idea es que quedara lo más vanilla posible.
+Muchas gracias por el tiempo, Saludos cordiales.
