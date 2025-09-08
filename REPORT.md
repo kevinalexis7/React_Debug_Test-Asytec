@@ -38,3 +38,8 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Eliminar el useEffect y hacer que SetHistory cambie solo cuando se ejecutan las funciones de incremento/decremento del contador.
 - **Resultado:** El historial comienza correctamente con 0 elementos.
 
+### Refactor – Orden de historial incomodo
+- **Descripción:** Al ir sumando elementos al historial estos se muestran último en la lista por lo que incomoda el seguimiento de los mismos.
+- **Solución:** Invertir el orden de aparición de los cambios(que los últimos cambios en el contador se muestren Primeros en la lista).
+- **Resultado:** El usuario ya no debería scrollear para ver los últimos cambios.
+

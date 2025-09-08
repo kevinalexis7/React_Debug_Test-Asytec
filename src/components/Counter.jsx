@@ -10,7 +10,7 @@ function Counter() {
     if (op === "+") newNum = count + step;
     if (op === "-") newNum = count - step;
     setCount(newNum);
-    setHistory((prev) => [...prev, newNum]);
+    setHistory((prev) => [newNum, ...prev]);
   }
 
   const clearHistory = () => {
@@ -21,7 +21,7 @@ function Counter() {
     setTimeout(() => {
       const newNum = count+1
       setCount(newNum);
-      setHistory((prev) => [...prev, newNum]);
+      setHistory((prev) => [newNum, ...prev]);
     }, 1000);
   };
 
