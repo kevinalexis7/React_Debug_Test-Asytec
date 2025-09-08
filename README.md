@@ -1,3 +1,5 @@
+📄 [Ver informe completo de errores y soluciones](./REPORT.md)
+
 # React Debug Test - Prueba Técnica
 
 ## Descripción
