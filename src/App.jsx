@@ -1,29 +1,36 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Counter from './components/Counter'
 import UserList from './components/UserList'
 import TodoList from './components/TodoList'
 import useLocalStorage from './hooks/useLocalStorage'
+import useTheme from './hooks/useTheme'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('counter')
-  const [theme, setTheme] = useLocalStorage('theme', 'light')
+  const [oldTab, setOldTab] = useLocalStorage("tab", 'counter')
+  const [activeTab, setActiveTab] = useState(oldTab)
+  const { theme, toggleTheme } = useTheme();
   
   useEffect(() => {
     document.title = `React Debug Test - ${activeTab}`
+    setOldTab(activeTab)
   })
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", theme === "dark");
+  }, [theme]);
 
   const handleThemeToggle = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
   }
 
   return (
-    <div className={`container ${theme}`}>
+    <div>
       <header>
         <h1>React Debug Test</h1>
         <div>
           <button 
             className="button" 
-            onClick={handleThemeToggle}
+            onClick={toggleTheme}
           >
             Toggle Theme ({theme})
           </button>

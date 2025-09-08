@@ -61,4 +61,26 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** Hacer que el useCase solo se ejecute cundo se monta el componente, quitando searchTerm del segundo parámetro.
 - **Resultado:** El buscador funciona con normalidad sin recargar la pagina.
 
+### Error 10 – No se mantiene la tabla
+- **Descripción:** Al actualizar la pagina siempre vuelve a la tab counter.
+- **Causa:** El estado activeTab tiene seteado por defecto la 'counter', lo que hace que siempre que recargues la página se cargue la tab counter.
+- **Solución:** Aprovechando el custom hook `useLocalStorage`, guardar la ultima tab que visita el usuario y tomar de ahí el valor inicial de activeTab.
+- **Resultado:** Independientemente de en que tab se encuentre el usuario, al recargar la pagina, seguirá en la misma tab.
+
+### Error 11 – Modo oscuro no funciona
+- **Descripción:** Al interactuar con el botón de modo oscuro(DarkMode) este no surge ningún efecto.
+- **Causa:** falta los estilos de css para la clase `dark`.
+- **Solución:** agregar los estilos pertinentes, a demás se movió la clase dark a la etiqueta body para que abarque todos los elementos html.
+- **Resultado:** El botón funciona correctamente haciendo toggle entre "dark" y "light" mode.
+
+### Refactor - Modo oscuro
+- **Descripción:** La lógica de `theme` está mezclada con la de app, lo que satura al componente.
+- **Solución:** Mover la lógica de theme a un custom hook.
+- **Resultado:** El código tanto en el componente `app` como en el hook `useTheme` quedo mucho más limpio, eficiente y escalable.`
+
+### Error 12 – Tabs activas
+- **Descripción:** con una tabla no sabes en cual estas parado.
+- **Causa:** falta los estilos de css para la clase `active`.
+- **Solución:** agregar los estilos pertinentes.
+- **Resultado:** Dependiendo de en que tabla esté parado el usuario, esta tendrá un color diferente, azul más oscuro.
 
