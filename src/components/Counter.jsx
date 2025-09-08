@@ -5,17 +5,13 @@ function Counter() {
   const [step, setStep] = useState(1);
   const [history, setHistory] = useState([]);
 
-  useEffect(() => {
-    setHistory((prev) => [...prev, count]);
-  }, [count]);
-
-  const increment = () => {
-    setCount(count + step);
-  };
-
-  const decrement = () => {
-    setCount(count - step);
-  };
+  function handleCount(op) {
+    let newNum = 0;
+    if (op === "+") newNum = count + step;
+    if (op === "-") newNum = count - step;
+    setCount(newNum);
+    setHistory((prev) => [...prev, newNum]);
+  }
 
   const clearHistory = () => {
     setHistory([]);
@@ -23,7 +19,9 @@ function Counter() {
 
   const incrementAsync = async () => {
     setTimeout(() => {
-      setCount(count + 1);
+      const newNum = count+1
+      setCount(newNum);
+      setHistory((prev) => [...prev, newNum]);
     }, 1000);
   };
 
@@ -51,13 +49,13 @@ function Counter() {
       </div>
 
       <div>
-        <button className="button" onClick={increment}>
+        <button className="button" onClick={() => handleCount("+")}>
           + {step}
         </button>
-        <button className="button" onClick={decrement}>
+        <button className="button" onClick={() => handleCount("-")}>
           - {step}
         </button>
-        <button className="button" onClick={() => setCount(0)}>
+        <button className="button" onClick={() => handleCount()}>
           Reset
         </button>
         <button className="button" onClick={incrementAsync}>

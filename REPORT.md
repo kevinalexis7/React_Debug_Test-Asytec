@@ -31,3 +31,10 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Causa:** El input de pasos no tiene un mínimo establecido.
 - **Solución:** Se establece un mínimo en la etiqueta input de que setea los pasos. También se interpreta como 1 cualquier valor menor a 1 en la función `setStep`.
 - **Resultado:** El contador de pasos funciona solo con números mayores a cero y previene un mal uso del mismo.
+
+### Error 5 – Historial con elementos de más
+- **Descripción:** Al recargar la página el historial empieza con dos items.
+- **Causa:** Al ejecutarse en useEffect, el componente se renderiza dos veces y carga el array de history dos veces el valor por defecto del estado `count` que es cero.
+- **Solución:** Eliminar el useEffect y hacer que SetHistory cambie solo cuando se ejecutan las funciones de incremento/decremento del contador.
+- **Resultado:** El historial comienza correctamente con 0 elementos.
+
