@@ -31,10 +31,8 @@ function UserList() {
   )
 
   const deleteUser = (userId) => {
-    const userIndex = users.findIndex(user => user.id === userId)
-    users.splice(userIndex, 1)
-    setUsers(users)
-  }
+  setUsers(users.filter(user => user.id !== userId))
+}
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value)

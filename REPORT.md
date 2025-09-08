@@ -48,3 +48,11 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Causa:** La función en cuestión no es una función asíncrona.
 - **Solución:** Eliminar el async.
 - **Resultado:** Sintaxis más simples y concisa.
+
+### Error 7 – Eliminar Usuarios
+- **Descripción:** En el listado de usuarios, al darle al botón de "delete" no ocurre nada.
+- **Causa:** La función `deleteUser` intenta modificar directamente la variable user por lo que React no detecta el cambio en el array.
+- **Solución:** Se crea un array nuevo con en usuario en cuestión filtrado y se setea con SetUsers.
+- **Resultado:** El usuario se elimina de la lista, React lo detecta y re-renderiza una lista nueva sin el usuario en cuestión.
+
+
