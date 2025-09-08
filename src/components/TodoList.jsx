@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 function TodoList() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useLocalStorage("todos", [])
   const [newTodo, setNewTodo] = useState('')
   const [filter, setFilter] = useState('all')
   const inputRef = useRef()
@@ -12,10 +13,6 @@ function TodoList() {
       setTodos(JSON.parse(savedTodos))
     }
   }, [])
-
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos))
-  }, [todos])
 
   const addTodo = () => {
     if (newTodo.trim()) {

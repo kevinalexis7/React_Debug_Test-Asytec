@@ -84,3 +84,10 @@ El objetivo fue identificar y corregir errores en una aplicación React, además
 - **Solución:** agregar los estilos pertinentes.
 - **Resultado:** Dependiendo de en que tabla esté parado el usuario, esta tendrá un color diferente, azul más oscuro.
 
+### Error 13 – Todos guardados
+- **Descripción:** La lista de todos no se guardaba correctamente y al recargar la pagina ésta desaparecía.
+- **Causa:** La lista se guardaba en un estado que el recargar la pagina tomaba su valor inicial.
+- **Solución:** Reutilizando el custom hook `useLocalHost` se setea como valor inicial un array vacío hasta que guarde algo dentro del local storage, entonces tomar como valor inicial su contenido.
+- **Resultado:** Ahora la lista de todos se guarda correctamente.
+
+
